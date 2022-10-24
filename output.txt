@@ -1,0 +1,426 @@
+Attaching package: ‘gdalUtils’
+
+The following objects are masked from ‘package:gdalUtilities’:
+
+    gdal_grid, gdal_rasterize, gdal_translate, gdalbuildvrt, gdaldem,
+    gdalinfo, gdalwarp, nearblack, ogr2ogr
+
+Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE
+
+Attaching package: ‘sf’
+
+The following object is masked from ‘package:gdalUtils’:
+
+    gdal_rasterize
+
+The following object is masked from ‘package:gdalUtilities’:
+
+    gdal_rasterize
+
+Loading required package: abind
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+     name  long_name write copy is_raster is_vector  vsi
+GPKG GPKG GeoPackage  TRUE TRUE      TRUE      TRUE TRUE
+                         name          long_name write  copy is_raster
+ESRIC                   ESRIC Esri Compact Cache FALSE FALSE      TRUE
+ESRI Shapefile ESRI Shapefile     ESRI Shapefile  TRUE FALSE     FALSE
+ESRIJSON             ESRIJSON           ESRIJSON FALSE FALSE     FALSE
+               is_vector  vsi
+ESRIC               TRUE TRUE
+ESRI Shapefile      TRUE TRUE
+ESRIJSON            TRUE TRUE
+    name                    long_name write  copy is_raster is_vector  vsi
+CSV  CSV Comma Separated Value (.csv)  TRUE FALSE     FALSE      TRUE TRUE
+Driver: WFS
+Available layers:
+                 layer_name geometry_type features fields crs_name
+1    ms:wosis_latest_bdfi33                  78058     15   WGS 84
+2    ms:wosis_latest_bdfiad                  13161     15   WGS 84
+3    ms:wosis_latest_bdfifm                  14160     15   WGS 84
+4    ms:wosis_latest_bdfiod                 122699     15   WGS 84
+5    ms:wosis_latest_bdws33                 154203     15   WGS 84
+6    ms:wosis_latest_bdwsod                  75306     15   WGS 84
+7    ms:wosis_latest_cecph7                 294224     15   WGS 84
+8    ms:wosis_latest_cecph8                  24118     15   WGS 84
+9      ms:wosis_latest_cfgr                 202376     15   WGS 84
+10     ms:wosis_latest_cfvo                 234848     15   WGS 84
+11     ms:wosis_latest_clay                 609993     15   WGS 84
+12     ms:wosis_latest_ecec                 132734     15   WGS 84
+13   ms:wosis_latest_elco20                  44307     15   WGS 84
+14   ms:wosis_latest_elco25                  15658     15   WGS 84
+15   ms:wosis_latest_elco50                  90914     15   WGS 84
+16   ms:wosis_latest_elcosp                  73311     15   WGS 84
+17   ms:wosis_latest_nitkjd                 216352     15   WGS 84
+18     ms:wosis_latest_orgc                 486639     15   WGS 84
+19     ms:wosis_latest_phaq                 610294     15   WGS 84
+20     ms:wosis_latest_phca                 313668     15   WGS 84
+21     ms:wosis_latest_phkc                 152984     15   WGS 84
+22     ms:wosis_latest_phnf                  25325     15   WGS 84
+23   ms:wosis_latest_phetb1                  40401     15   WGS 84
+24   ms:wosis_latest_phetm3                   7230     15   WGS 84
+25   ms:wosis_latest_phetol                   8358     15   WGS 84
+26   ms:wosis_latest_phprtn                  23806     15   WGS 84
+27   ms:wosis_latest_phptot                  13997     15   WGS 84
+28   ms:wosis_latest_phpwsl                   1241     15   WGS 84
+29 ms:wosis_latest_profiles                 210591     70   WGS 84
+30     ms:wosis_latest_sand                 492519     15   WGS 84
+31     ms:wosis_latest_silt                 576354     15   WGS 84
+32     ms:wosis_latest_tceq                 221850     15   WGS 84
+33     ms:wosis_latest_totc                 111582     15   WGS 84
+34   ms:wosis_latest_wg0006                   3828     15   WGS 84
+35   ms:wosis_latest_wg0010                  12526     15   WGS 84
+36   ms:wosis_latest_wg0033                  94759     15   WGS 84
+37   ms:wosis_latest_wg0100                   3360     15   WGS 84
+38   ms:wosis_latest_wg0200                  27780     15   WGS 84
+39   ms:wosis_latest_wg0500                   1414     15   WGS 84
+40   ms:wosis_latest_wg1500                 182097     15   WGS 84
+41   ms:wosis_latest_wv0010                   5213     15   WGS 84
+42   ms:wosis_latest_wv0033                  17567     15   WGS 84
+43   ms:wosis_latest_wv0100                   2553     15   WGS 84
+44   ms:wosis_latest_wv0500                   1758     15   WGS 84
+45   ms:wosis_latest_wv1500                  17371     15   WGS 84
+Metadata:
+  ABSTRACT=Title: wosis_latest
+  PROVIDER_NAME=ISRIC - World Soil Reference
+  TITLE=Title: wosis_latest
+
+Layer name: ms:wosis_latest_profiles
+Metadata:
+  ABSTRACT=All profiles available in WoSIS latest with the soil Classification according to specified edition (year) of the World Reference Base for Soil Resources (WRB, up to qualifier level); FAO-Unesco Legend (up to soil unit level); USDA Soil Taxonomy (up to subgroup level).
+
+ISRIC is developing a centralized and user–focused server database, known as ISRIC World Soil Information Service (WoSIS). The aims are to:
+
+• Safeguard world soil data "as is"
+
+• Share soil point (i.e. profile) data upon their standardization, and ultimately harmonization
+
+• Provide quality-assessed, geo-referenced soil data for a growing range of environmental applications (e.g. SoilGrids250m).
+
+At present, wosis_latest contains standardized data for 217,000 profiles. The number of measured data for each property varies between proﬁles and with depth, generally depending on the purpose of the initial studies. Further, in most source data sets, there are fewer data for soil physical as opposed to soil chemical attributes and there are fewer measurements for deeper than for superficial horizons. Generally, limited quality information is associated with the various source data. Further information is provided in a (https://doi.org/10.5194/essd-12-299-2020) and (https://www.isric.org/sites/default/files/WOSISprocedureManual_2020nov17web.pdf)
+  KEYWORD_1=Soil
+  KEYWORD_2=Standard
+  KEYWORD_3=Profiles
+  KEYWORD_4=WoSIS
+  KEYWORD_5=WoSIS latest
+  KEYWORD_6=Soil classification
+  TITLE=WoSIS latest - Profiles
+[1] "INFO: Open of `WFS:https://maps.isric.org/mapserv?map=/map/wosis_latest.map'"
+[2] "      using driver `WFS' successful."
+[3] "Metadata:"
+[4] "  ABSTRACT=Title: wosis_latest"
+[5] "  PROVIDER_NAME=ISRIC - World Soil Reference"
+[6] "  TITLE=Title: wosis_latest"
+[7] ""
+[8] "Layer name: ms:wosis_latest_profiles"
+[1] "Feature Count: 224"
+[1] "Extent: (6.052500, 48.074444) - (7.966667, 50.000000)"
+GEOGCRS["WGS 84",
+    ENSEMBLE["World Geodetic System 1984 ensemble",
+        MEMBER["World Geodetic System 1984 (Transit)"],
+        MEMBER["World Geodetic System 1984 (G730)"],
+        MEMBER["World Geodetic System 1984 (G873)"],
+        MEMBER["World Geodetic System 1984 (G1150)"],
+        MEMBER["World Geodetic System 1984 (G1674)"],
+        MEMBER["World Geodetic System 1984 (G1762)"],
+        MEMBER["World Geodetic System 1984 (G2139)"],
+        ELLIPSOID["WGS 84",6378137,298.257223563,
+            LENGTHUNIT["metre",1]],
+        ENSEMBLEACCURACY[2.0]],
+    PRIMEM["Greenwich",0,
+        ANGLEUNIT["degree",0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS["geodetic latitude (Lat)",north,
+            ORDER[1],
+            ANGLEUNIT["degree",0.0174532925199433]],  [1] "gml_id: String (0.0) NOT NULL"
+  [2] "profile_id: Integer (0.0)"
+  [3] "dataset_id: String (0.0)"
+  [4] "continent: String (0.0)"
+  [5] "country_id: String (0.0)"
+  [6] "country_name: String (0.0)"
+  [7] "geom_accuracy: Real (0.0)"
+  [8] "latitude: Real (0.0)"
+  [9] "longitude: Real (0.0)"
+ [10] "dsds: Integer (0.0)"
+ [11] "cfao_version: Integer (0.0)"
+ [12] "cfao_major_group_code: String (0.0)"
+ [13] "cfao_major_group: String (0.0)"
+ [14] "cfao_soil_unit_code: String (0.0)"
+ [15] "cfao_soil_unit: String (0.0)"
+ [16] "cwrb_version: Integer (0.0)"
+ [17] "cwrb_reference_soil_group_code: String (0.0)"
+ [18] "cwrb_reference_soil_group: String (0.0)"
+ [19] "cwrb_prefix_qualifier: String (0.0)"
+ [20] "cwrb_suffix_qualifier: String (0.0)"
+ [21] "cstx_version: Integer (0.0)"
+ [22] "cstx_order_name: String (0.0)"
+ [23] "cstx_suborder: String (0.0)"
+ [24] "cstx_great_group: String (0.0)"
+ [25] "cstx_subgroup: String (0.0)"
+ [26] "bdfi33: String (0.0)"
+ [27] "bdfiad: String (0.0)"
+ [28] "bdfifm: String (0.0)"
+ [29] "bdfiod: String (0.0)"
+ [30] "bdws33: String (0.0)"
+ [31] "bdwsod: String (0.0)"
+ [32] "cecph7: String (0.0)"
+ [33] "cecph8: String (0.0)"
+ [34] "cfgr: String (0.0)"
+ [35] "cfvo: String (0.0)"
+ [36] "clay: String (0.0)"
+ [37] "ecec: String (0.0)"
+ [38] "elco20: String (0.0)"
+ [39] "elco25: String (0.0)"
+ [40] "elco50: String (0.0)"
+ [41] "elcosp: String (0.0)"
+ [42] "nitkjd: String (0.0)"
+ [43] "orgc: String (0.0)"
+ [44] "orgm: String (0.0)"
+ [45] "phaq: String (0.0)"
+ [46] "phca: String (0.0)"
+ [47] "phetb1: String (0.0)"
+ [48] "phetm3: String (0.0)"
+ [49] "phetol: String (0.0)"
+ [50] "phkc: String (0.0)"
+ [51] "phnf: String (0.0)"
+ [52] "phprtn: String (0.0)"
+ [53] "phptot: String (0.0)"
+ [54] "phpwsl: String (0.0)"
+ [55] "sand: String (0.0)"
+ [56] "silt: String (0.0)"
+ [57] "tceq: String (0.0)"
+ [58] "totc: String (0.0)"
+ [59] "wg0006: String (0.0)"
+ [60] "wg0010: String (0.0)"
+ [61] "wg0033: String (0.0)"
+ [62] "wg0100: String (0.0)"
+ [63] "wg0200: String (0.0)"
+ [64] "wg0500: String (0.0)"
+ [65] "wg1500: String (0.0)"
+ [66] "wv0010: String (0.0)"
+ [67] "wv0033: String (0.0)"
+ [68] "wv0100: String (0.0)"
+ [69] "wv0500: String (0.0)"
+ [70] "wv1500: String (0.0)"
+ [71] NA
+ [72] NA
+ [73] NA
+ [74] NA
+ [75] NA
+ [76] NA
+ [77] NA
+ [78] NA
+ [79] NA
+ [80] NA
+ [81] NA
+ [82] NA
+ [83] NA
+ [84] NA
+ [85] NA
+ [86] NA
+ [87] NA
+ [88] NA
+ [89] NA
+ [90] NA
+ [91] NA
+ [92] NA
+ [93] NA
+ [94] NA
+ [95] NA
+ [96] NA
+ [97] NA
+ [98] NA
+ [99] NA
+[100] NA
+[101] NA
+[102] NA
+[103] NA
+[104] NA
+[105] NA
+[106] NA
+[107] NA
+[108] NA
+[109] NA
+[110] NA
+[111] NA
+[112] NA
+[113] NA
+[114] NA
+[115] NA
+[116] NA
+[117] NA
+[118] NA
+[119] NA
+[120] NA
+[121] NA
+[122] NA
+[123] NA
+[124] NA
+[125] NA
+[126] NA
+[127] NA
+[128] NA
+[129] NA
+[1] "Feature Count: 199"
+[1] "Extent: (69.800000, 8.483333) - (94.050000, 32.000000)"
+
+MUCHAS LINEAS DE ESTO
+>>>>>>>>>>>>>>>> Warning 1: Value 'false' of field wosis_latest_bdfi33.litter parsed incompletely to integer 0.
+
+More than 1000 errors or warnings have been reported. No more will be reported from now.
+
+INFO: Open of `WFS:https://maps.isric.org/mapserv?map=/map/wosis_latest.map'
+      using driver `WFS' successful.
+Metadata:
+  ABSTRACT=Title: wosis_latest
+  PROVIDER_NAME=ISRIC - World Soil Reference
+  TITLE=Title: wosis_latest
+
+Layer name: ms:wosis_latest_bdfi33
+Metadata:
+  ABSTRACT=Bulk density of the fine earth fraction*, equilibrated at 33 kPa (kg/dm³).
+
+ISRIC is developing a centralized and user–focused server database, known as ISRIC World Soil Information Service (WoSIS). The aims are to:
+
+• Safeguard world soil data "as is"
+
+• Share soil point (i.e. profile) data upon their standardization, and ultimately harmonization
+
+• Provide quality-assessed, geo-referenced soil data for a growing range of environmental applications (e.g. SoilGrids250m).
+
+At present, wosis_latest contains standardized data for 217,000 profiles. The number of measured data for each property varies between proﬁles and with depth, generally depending on the purpose of the initial studies. Further, in most source data sets, there are fewer data for soil physical as opposed to soil chemical attributes and there are fewer measurements for deeper than for superficial horizons. Generally, limited quality information is associated with the various source data. Further information is provided in a (https://doi.org/10.5194/essd-12-299-2020) and (https://www.isric.org/sites/default/files/WOSISprocedureManual_2020nov17web.pdf).
+
+* The fine earth fraction is generally defined as being less than 2 mm. However, an upper limit of 1 mm was used in the former Soviet Union  and its sattelite states (Katchynsky scheme). This has been indicated in the database.
+  KEYWORD_1=Soil
+  KEYWORD_2=Standard
+  KEYWORD_3=WoSIS
+  KEYWORD_4=latest
+  KEYWORD_5=Bulk density fine earth - 33 kPa
+  TITLE=WoSIS latest - Bulk density fine earth - 33 kPa
+Geometry: Unknown (any)
+Feature Count: 78058
+Extent: (-171.927505, -77.848663) - (161.600617, 76.228333)
+Layer SRS WKT:
+GEOGCRS["WGS 84",
+    ENSEMBLE["World Geodetic System 1984 ensemble",
+        MEMBER["World Geodetic System 1984 (Transit)"],
+        MEMBER["World Geodetic System 1984 (G730)"],
+        MEMBER["World Geodetic System 1984 (G873)"],
+        MEMBER["World Geodetic System 1984 (G1150)"],
+        MEMBER["World Geodetic System 1984 (G1674)"],
+        MEMBER["World Geodetic System 1984 (G1762)"],
+        MEMBER["World Geodetic System 1984 (G2139)"],
+        ELLIPSOID["WGS 84",6378137,298.257223563,
+            LENGTHUNIT["metre",1]],
+        ENSEMBLEACCURACY[2.0]],
+    PRIMEM["Greenwich",0,
+        ANGLEUNIT["degree",0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS["geodetic latitude (Lat)",north,
+            ORDER[1],
+            ANGLEUNIT["degree",0.0174532925199433]],
+        AXIS["geodetic longitude (Lon)",east,
+            ORDER[2],
+            ANGLEUNIT["degree",0.0174532925199433]],
+    USAGE[
+        SCOPE["Horizontal component of 3D system."],
+        AREA["World."],
+        BBOX[-90,-180,90,180]],
+    ID["EPSG",4326]]
+Data axis to CRS axis mapping: 2,1
+Geometry Column = msGeometry
+gml_id: String (0.0) NOT NULL
+profile_id: Integer (0.0)
+profile_layer_id: Integer (0.0)
+country_name: String (0.0)
+upper_depth: Integer (0.0)
+lower_depth: Integer (0.0)
+layer_name: String (0.0)
+litter: Integer (0.0)
+bdfi33_value: String (0.0)
+bdfi33_value_avg: Real (0.0)
+bdfi33_method: String (0.0)
+bdfi33_date: String (0.0)
+bdfi33_dataset_id: String (0.0)
+bdfi33_profile_code: String (0.0)
+bdfi33_licence: String (0.0)
+[1] "Feature Count: 78058"
+
+>>>>>Warning 1: Value 'false' of field wosis_latest_bdfi33.litter parsed incompletely to integer 0.
+
+[1] "Feature Count: 32"
+[1] 32
+[1] "./wosis_latest/wosis_latest_profiles.gpkg"
+    user   system  elapsed
+ 140.417   14.608 2145.997
+[1] 102.5469
+Reading layer `ms:wosis_latest_profiles' from data source
+  `/home/mtvl/repos/wosis/wosis_latest/wosis_latest_profiles.gpkg'
+  using driver `GPKG'
+Simple feature collection with 210591 features and 70 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -172.3633 ymin: -77.84866 xmax: 178.4333 ymax: 79.9
+Geodetic CRS:  WGS 84
+[1] "sf"         "data.frame"
+[1] 210591     71
+ [1] "gml_id"                         "profile_id"
+ [3] "dataset_id"                     "continent"
+ [5] "country_id"                     "country_name"
+ [7] "geom_accuracy"                  "latitude"
+ [9] "longitude"                      "dsds"
+[11] "cfao_version"                   "cfao_major_group_code"
+[13] "cfao_major_group"               "cfao_soil_unit_code"
+[15] "cfao_soil_unit"                 "cwrb_version"
+[17] "cwrb_reference_soil_group_code" "cwrb_reference_soil_group"
+[19] "cwrb_prefix_qualifier"          "cwrb_suffix_qualifier"
+[21] "cstx_version"                   "cstx_order_name"
+[23] "cstx_suborder"                  "cstx_great_group"
+[25] "cstx_subgroup"                  "bdfi33"
+[27] "bdfiad"                         "bdfifm"
+[29] "bdfiod"                         "bdws33"
+[31] "bdwsod"                         "cecph7"
+[33] "cecph8"                         "cfgr"
+[35] "cfvo"                           "clay"
+[37] "ecec"                           "elco20"
+[39] "elco25"                         "elco50"
+[41] "elcosp"                         "nitkjd"
+[43] "orgc"                           "orgm"
+[45] "phaq"                           "phca"
+[47] "phetb1"                         "phetm3"
+[49] "phetol"                         "phkc"
+[51] "phnf"                           "phprtn"
+[53] "phptot"                         "phpwsl"
+[55] "sand"                           "silt"
+[57] "tceq"                           "totc"
+[59] "wg0006"                         "wg0010"
+[61] "wg0033"                         "wg0100"
+[63] "wg0200"                         "wg0500"
+[65] "wg1500"                         "wv0010"
+[67] "wv0033"                         "wv0100"
+[69] "wv0500"                         "wv1500"
+[71] "msGeometry"
+
+United States of America                Australia                    Chile
+                   56075                    43019                    13595
+             Switzerland                   Brazil                   Canada
+                   10879                     9206                     8449
+[1] "./wosis_latest/ms_wosis_latest_profiles.shp"
+   user  system elapsed
+  0.053   0.009   0.791
+[1] NA
+[1] "./wosis_latest/ms_wosis_latest_profiles.shp"
+   user  system elapsed
+  0.061   0.000   0.797
+[1] NA
+Error: Cannot open "/home/mtvl/repos/wosis/wosis_latest"; The source could be corrupt or not supported. See `st_drivers()` for a list of supported formats.
+Execution halted
