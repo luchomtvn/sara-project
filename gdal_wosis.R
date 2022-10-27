@@ -16,12 +16,15 @@ library(mapdata)
 
 
 ## ----local parameters----------------------------------------------------------------------------
-wfs <- "WFS:https://maps.isric.org/mapserv?map=/map/wosis_latest.map"
 layer.country = 'Argentina'
+file.format = 'CSV' # CSV or GPKG
+file.extension = ".csv" # .csv or .gpkg
+layer.type = "orgc" # orgc, clay, ...
+
+## ---- other local variables. Do not modify ------------------------------------------------------
+wfs <- "WFS:https://maps.isric.org/mapserv?map=/map/wosis_latest.map"
 wosis.dir.name <- "./wosis_latest"
-file.format = 'GPKG'
-file.extension = ".gpkg"
-layer.name <- "wosis_latest_profiles"
+layer.name <- paste("wosis_latest_", layer.type, sep="")
 
 ## Check drivers
 drivers <- sf::st_drivers()
@@ -52,7 +55,7 @@ print("file size: ")
 file.info(dst.target.name)$size/1024/1024
 
 ## Convert the dataset to R dataframe
-profiles.gpkg <- sf::st_read(dst.target.name)
-class(profiles.gpkg)
-dim(profiles.gpkg)
-names(profiles.gpkg)
+df <- sf::st_read(dst.target.name)
+class(df)
+dim(df)
+names(df)
