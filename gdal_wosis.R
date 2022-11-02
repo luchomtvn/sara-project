@@ -1,3 +1,21 @@
+suppressPackageStartupMessages(library(argparse))
+
+parser <- ArgumentParser()
+parser$add_argument("country",
+    help = "Available country areas to get profiles from: Argentina, Uruguay, Chile")
+parser$add_argument("format",
+    help = "Available formats: CSV, GPKG")
+parser$add_argument("property",
+    help = "Available properties: clay, bdfi33, orgc")
+parser$add_argument("-v", "--verbose", action="store_true", default=FALSE,
+    help="Print extra output [default]")
+parser$add_argument("-q", "--quietly", action="store_false", 
+    dest="verbose", help="Print little output")
+                                        
+# get command line options, if help option encountered print help and exit,
+# otherwise if options not found on command line then set defaults, 
+args <- parser$parse_args()
+
 ## ----setup, include=FALSE------------------------------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE, warnings = FALSE, purl = FALSE)
 options(warn=-1)
@@ -5,26 +23,28 @@ options(warn=-1)
 ## ----load.package--------------------------------------------------------------------------------
 # library(devtools)
 # devtools::install_github("JoshOBrien/gdalUtilities")
-library(gdalUtilities)      # wrappers for GDAL utility programs that could be called from the command line, but here via `sf`
+suppressPackageStartupMessages(library(gdalUtilities))      # wrappers for GDAL utility programs that could be called from the command line, but here via `sf`
 # devtools::install_github("gearslaboratory/gdalUtils")
-library(gdalUtils)      # wrappers for GDAL utility programs that could be called from the command line,
-library(sf)             # spatial data types -- Simple Features
-library(stars)          # Spatiotemporal Arrays, Raster and Vector Data Cubes
-library(dplyr)          # tidyverse data manipulation functions
-library(maps)           # optional -- for boundary polygons
-library(mapdata)
+suppressPackageStartupMessages(library(gdalUtils))      # wrappers for GDAL utility programs that could be called from the command line,
+suppressPackageStartupMessages(library(sf))             # spatial data types -- Simple Features
+suppressPackageStartupMessages(library(stars))          # Spatiotemporal Arrays, Raster and Vector Data Cubes
+suppressPackageStartupMessages(library(dplyr))          # tidyverse data manipulation functions
+suppressPackageStartupMessages(library(maps))           # optional -- for boundary polygons
+suppressPackageStartupMessages(library(mapdata))
 
 
 ## ----local parameters----------------------------------------------------------------------------
-layer.country = 'Argentina'
-file.format = 'CSV' # CSV or GPKG
-file.extension = ".csv" # .csv or .gpkg
-layer.type = "bdfi33" # orgc, clay, bdfi33
+layer.country = args$country
+file.format = args$format
+layer.type = args$property
 
 ## ---- other local variables. Do not modify ------------------------------------------------------
 wfs <- "WFS:https://maps.isric.org/mapserv?map=/map/wosis_latest.map"
 wosis.dir.name <- "./wosis_latest"
 layer.name <- paste("wosis_latest_", layer.type, sep="")
+
+# TODO: this won't do when working with SHP files
+file.extension = paste(".", tolower(file.format), sep="")
 
 ## Check drivers
 drivers <- sf::st_drivers()
@@ -53,9 +73,3 @@ system.time(
 }
 print("file size: ")
 file.info(dst.target.name)$size/1024/1024
-
-## Convert the dataset to R dataframe
-df <- sf::st_read(dst.target.name)
-class(df)
-dim(df)
-names(df)
