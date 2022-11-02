@@ -19,7 +19,7 @@ library(mapdata)
 layer.country = 'Argentina'
 file.format = 'CSV' # CSV or GPKG
 file.extension = ".csv" # .csv or .gpkg
-layer.type = "orgc" # orgc, clay, ...
+layer.type = "bdfi33" # orgc, clay, bdfi33
 
 ## ---- other local variables. Do not modify ------------------------------------------------------
 wfs <- "WFS:https://maps.isric.org/mapserv?map=/map/wosis_latest.map"
