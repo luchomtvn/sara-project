@@ -4,9 +4,9 @@ parser <- ArgumentParser()
 parser$add_argument("country",
     help = "Available country areas to get profiles from: Argentina, Uruguay, Chile")
 parser$add_argument("format",
-    help = "Available formats: CSV, GPKG")
+    help = "Available formats: CSV, GPKG, SHP")
 parser$add_argument("property",
-    help = "Available properties: clay, bdfi33, orgc")
+    help = "Available properties: clay, bdfi33, orgc, profiles")
 parser$add_argument("-v", "--verbose", action="store_true", default=FALSE,
     help="Print extra output [default]")
 parser$add_argument("-q", "--quietly", action="store_false", 
@@ -43,8 +43,11 @@ wfs <- "WFS:https://maps.isric.org/mapserv?map=/map/wosis_latest.map"
 wosis.dir.name <- "./wosis_latest"
 layer.name <- paste("wosis_latest_", layer.type, sep="")
 
-# TODO: this won't do when working with SHP files
+
 file.extension = paste(".", tolower(file.format), sep="")
+if (file.format == 'SHP'){
+    file.format = 'ESRI Shapefile'
+}
 
 ## Check drivers
 drivers <- sf::st_drivers()
