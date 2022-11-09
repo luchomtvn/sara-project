@@ -1,0 +1,167 @@
+13. Temperate Sierras
+13.6 Central American Sierra Madre and Chiapas Highlands
+13.6.1 Northern Central American Highlands
+13.6.2 Central American Sierra Madre
+13.6.4 Altos de Chiapas con bosque mesoófilo
+14. Mexican Tropical Dry Forests
+14.4 Interior Depressions
+14.4.2 Chiapas Depression
+14.4.3 Motagua Valley
+15. Middle American Tropical Wet Forests
+15.1 Humid Gulf of Mexico Coastal Plains and Hills
+15.1.4 Humid Gulf of Mexico and Southern Petén Hills
+15.1.5 Maya Mountains
+15.2 Yucatan Peninsula Plains and Hills
+15.2.1 Quintana Roo / Belizean Wet Coastal Lowland
+15.2.2 Yucatán Karst Plains
+15.2.3 Central Yucatán / Petén Hills and Karst Plains
+15.6 Soconusco / Guatemalan Coastal Plain and Hills
+15.6.2 Soconusco / Guatemalan Coastal Plain
+15.6.3 Soconusco Hills / Guatemalan Piedmont
+15.7 Central American Isthmus
+15.7.1 Pacific Volcanic Lowlands
+15.7.2 Caribbean Coastal Plains and Hills
+15.7.3 Miskito Lowland Pine Savanna
+15.7.4 Guanacaste / Central Volcanic Uplands
+15.7.5 Talamanca and Panama Central Cordilleras
+15.7.6 Costa Rica-Panama Pacific Plains and Hills
+16. West Indies
+16.1 Bahamas
+16.1.1 Bahamas
+16.2 Greater Antilles
+16.2.1 Cuba
+16.2.2 Mountainous Greater Antilles
+16.3 Lesser Antilles
+16.3.1 Limestone Low Islands
+1 6.3.2 Volcanic High Islands
+17. Northern Andes
+17.1 Caribe / Pacific Lowland Plains and Hills
+17.1.1 Sinú / Magdalena Dry Plains
+17.1.2 Magdalena Wet Plains
+17.1.3 Maracaibo Lowlands
+17.1.4 Guajira/Paraguaná Peninsulas
+17.1.5 Chichiriviche Coastal Plain
+17.1.6 Unare Plains
+17.1.7 Pacific Plains and Hills
+17.1.8 Guayas-Tumbes-Piura Dry Hills
+17.2 Venezuelan Coastal Andes
+17.2.1 Segovia Highlands
+17.2.2 Central Coastal Cordillera
+17.2.3 Eastern Coastal Cordillera
+17.3 Northern Andean Highlands
+17.3.1 Sierra Nevada de Santa Marta
+17.3.2 Colombian / Venezuelan High Cordilleras
+17.3.3 Paramo / Alto Andina
+17.3.4 Upper Magdalena Valley
+17.3.5 Upper Cauca Valley
+17.3.6 Pacific Western Cordillera Montane Forest
+17.3.7 Eastern Cordillera Montane Forest
+17.3.8 S. Ecuador / N. Peru Transitional High Andes
+18. Central Andes
+18.1 Central High Andes/Puna
+18.1.1 High Andes / Humid Puna
+18.1.2 Dry Puna / Puna de Atacama
+18.1.3 Southern Central Andes
+18.2 Altiplano
+18.2.1 Titicaca / Northern Altiplano
+18.2.2 Southern Arid Altiplano
+18.3 Yungas
+18.3.1 Northern Yungas
+18.3.2 Southern Yungas
+18.4 Peruvian/Atacaman Deserts
+18.4.1 Northern Peruvian Desert
+18.4.2 Garua-Loma Desert
+18.4.3 Northern Chilean Desert
+1 8.4.4 Transitional Subdesert Matoral
+19. Southern Andes
+1 9.1 Mediterranean Chile
+19.1.1 Coastal Ranges
+19.1.2 Llano Central
+19.2 Valdivian Forested Hills and Mountains
+19.2.1 Valdivian Coastal Range
+19.2.2 Central Depression
+19.2.3 Valdivian High Andes
+19.3 Fuegian Fiords and Forests
+19.3.1 Magellanic Moorland and Rainforest
+19.3.2 Fuegian High Andes / Ice Caps
+19.4 Subantarctic Islands
+19.4.1 Falklands / Islas Malvinas
+20. Amazonian-Orinocan Lowland
+20.1 Orinoco Llanos
+20.1.1 Piedmont
+20.1.2 High Plains or Dissected Plains
+20.1.3 Alluvial Overflow Plains / Wet Plains
+20.2 Amazon Irregular Plains and Piedmont
+20.2.1 Colombia Rock Mesa Amazon
+20.2.2 Napo / Putamayo Moist Forests
+20.2.3 Ucayali / Marañon Lowland
+20.2.4 Southwestern Amazonian Irregular Plains
+20.2.5 Llanos de Mojos / Beni Savanna
+20.3 Guianan Shield Moist Forests
+20.3.1 Upper Rio Negro / Campinas area
+20.3.2 Boa Vista Depression / Rupununi Savanna
+20.3.3 Guianan Forested Plains and Hills
+20.3.4 Amapá / Roraima Plains and Tablelands
+20.4 Amazon and Coastal Lowlands
+20.4.1 Amazon Flat Plains
+20.4.2 Várzea / Igapó
+20.4.3 Amazon Estuary and Coastal Savannas
+20.4.4 Guianan Coastal Lowland
+20.5 Brazilian Shield Moist Forests
+20.5.1 Gurupi Plains and Low Tablelands
+20.5.2 Amazon Upland Irregular Plains
+20.5.3 Mixed Forest Plains and Tablelands
+20.5.4 Upper Xingu Depression
+21. Eastern Highlands
+21.1 Guianan Highlands
+21.1.1 Guianan Uplands and Tepuis
+21.1.2 Roraima and Grand Savannas
+21.1.3 Suriname / Guyana Low Mountains
+21.2 Cerrados
+21.2.1 Northern Maranhão Plains
+21.2.2 Northern Piauí Plains
+21.2.3 Northeastern Cerrado
+21.2.4 Araguaia Depression
+21.2.5 Tocantins Hills and Tablelands
+21.2.6 Espinhaço / Diamantina Hills and Low Mountains
+21.2.7 Mato Grosso Savanna Tablelands
+21.2.8 Upper Paraguai / Guapore Plains and Hills
+21.2.9 Pantanal
+21.2.10 Chiquitos-Velasco Forested Hills and Plains
+21.2.11 Southern Cerrado Tablelands
+21.3 Caatinga
+21.3.1 Northeastern Caatinga
+21.3.2 Western Caatinga
+21.4 Atlantic Forests
+21.4.1 Agreste / Caatinga Transition
+21.4.2 Brazilian Atlantic Coastal Forests
+21.4.3 Eastern Inland Atlantic Mixed Forests
+21.4.4 Western Inland Atlantic Mixed Forests
+21.4.5 Araucaria Tablelands
+22. Gran Chaco
+22.1 Western Dry Chaco
+22.1.1 Northern Dry Chaco
+22.1.2 Southern Dry Chaco
+22.1.3 Sierras of Cordoba and San Luis
+22.1.4 Pampa Seca / Espinal
+22.2 Humid Chaco
+22.2.1 Northern Humid Chaco
+22.2.2 Southern Humid Chaco
+23. Pampas
+23.1 Northern Rolling Pampas
+23.1.1 Campos / Northern Pampas
+23.1.2 Brazil / Uruguay Coastal Pampa
+23.1.3 Southern Uruguay Lowland
+23.2 Southern Flat Pampas
+23.2.1 La Plata / Uruguay Lowland
+23.2.2 Inland Pampa
+23.2.3 Low Argentine Pampa
+23.2.4 Southern Pampa
+24. Monte-Patagonian
+24.1 Monte
+24.1.1 Monte
+24.2 Patagonian Tablelands
+24.2.1 Northern Patagonia
+24.2.2 Southern Patagonia
+24.2.3 Magellan Grasslands
+25. Galapagos
