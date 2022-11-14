@@ -16,3 +16,4 @@ LAC-SOTER
 *.tif
 remapasdesuelo/
 soil_profiles/
+output/*

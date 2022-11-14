@@ -1,6 +1,7 @@
 import pytest
 import unittest
 from pyscripts.get_wosis_data import call_r_script
+from pyscripts import settings
 from pathlib import Path
 import warnings
 import logging
@@ -11,7 +12,7 @@ logger.setLevel(logging.INFO)
 
 class TestCommon(unittest.TestCase):
     def test_call_r_script(self):
-        file = "wosis_latest/wosis_latest_clay_Argentina.csv"
+        file = settings.data_dir + "/wosis_latest/wosis_latest_clay_Argentina.csv"
         my_file = Path(file)
         if (my_file.is_file() == True):
             self.assertTrue(call_r_script('Argentina', 'CSV', 'clay'), file)
