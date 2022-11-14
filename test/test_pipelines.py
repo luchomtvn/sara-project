@@ -11,10 +11,9 @@ logger.setLevel(logging.INFO)
 
 
 class TestCommon(unittest.TestCase):
-    def report_by_country(self):
+    def test_wosis_report_for_country(self):
         wosis_report_for_country('Uruguay')
-        
-
+        self.assertTrue(True)
 
 if __name__ == '__main__':
     unittest.main()
