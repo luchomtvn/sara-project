@@ -1,6 +1,6 @@
 import pytest
 import unittest
-from pyscripts.get_wosis_data import call_r_script
+from pyscripts.wosis_profiles import call_r_script
 from pyscripts import settings
 from pathlib import Path
 import warnings
