@@ -20,6 +20,5 @@ class TestCommon(unittest.TestCase):
             self.assertTrue(call_r_script('Argentina', 'CSV', 'clay'), file)
         self.assertTrue(my_file.is_file())
 
-
 if __name__ == '__main__':
     unittest.main()
