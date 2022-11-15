@@ -21,5 +21,6 @@ class TestCommon(unittest.TestCase):
         file = 'Uruguay_profile_summary_with_bdod.csv'
         self.assertTrue(Path(settings.output_dir + file).is_file())
 
+
 if __name__ == '__main__':
     unittest.main()
