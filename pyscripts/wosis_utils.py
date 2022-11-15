@@ -25,8 +25,9 @@ def fetch_wosis_latest_profiles(country_name):
     call r script to fetch wosis latest for a country. Specify property and file type
 '''
 def wosis_ogr2ogr(country_name, type, property):
-    filename = f'{settings.data_dir}/{settings.wosis_dir}/wosis_latest_{property}_{country_name}.{type.lower()}'
+    filename = f'{settings.wosis_dir}wosis_latest_{property}_{country_name}.{type.lower()}'
     my_file = Path(filename)
+    logger.info(filename)
     if (my_file.is_file() == True):
         logger.warning(
             f'file {filename} already exists, remove file first if you wish to update')

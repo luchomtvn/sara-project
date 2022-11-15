@@ -14,7 +14,8 @@ logger.setLevel(logging.INFO)
 
 class TestCommon(unittest.TestCase):
     def test_wosis_ogr2ogr(self):
-        file = settings.data_dir + "/wosis_latest/wosis_latest_clay_Argentina.csv"
+        file = settings.data_dir + "wosis_latest/wosis_latest_clay_Argentina.csv"
+        logger.info(file)
         my_file = Path(file)
         if (my_file.is_file() == True):
             self.assertTrue(wosis_ogr2ogr('Argentina', 'CSV', 'clay'), file)

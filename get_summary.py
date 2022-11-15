@@ -1,4 +1,4 @@
-# this is a script that consumes from pyscripts files and is tested by tests in test subdir. 
+# this is a script that consumes from pyscripts files and is tested in test subdir. 
 # it is expected to be executed by a command line and to be passed arguments.
 
 from pyscripts.pipelines import wosis_report_for_country
