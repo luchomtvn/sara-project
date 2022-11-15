@@ -32,7 +32,7 @@ def wosis_ogr2ogr(country_name, type, property):
             f'file {filename} already exists, remove file first if you wish to update')
     else:
         subprocess.call(
-            [f"sudo Rscript gdal_wosis.R {country_name} {type} {property}"], shell=True)
+            [f"sudo Rscript {settings.Rscript_path} {country_name} {type} {property}"], shell=True)
         logger.info(f'data downloaded to path: {filename}')
 
     return filename
