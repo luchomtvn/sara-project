@@ -6,10 +6,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from country_bounding_boxes import country_subunits_by_iso_code
 from pyscripts import settings
+import logging
 import re
 import os
 from os.path import exists
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 country_map = {
     'Argentina': 'AR',
@@ -31,13 +34,17 @@ def get_raster_files(country_name):
 
     country_code = country_map[country_name]
     bddata = []
-    bbox = list([c.bbox for c in country_subunits_by_iso_code(country_code)][0]) # returns tuple inside list
-    bbox = transform_crs("epsg:4326", settings.flat_crs, bbox)
+    subunits = country_subunits_by_iso_code(country_code)
+    bbox = transform_crs(subunits, "epsg:4326", settings.flat_crs)
 
-    bboxes = bbox_split_v(bbox, 2)
-    for idx, bbox in enumerate(bboxes):
+    if country_name in ['AR', 'CL']:
+        bboxes = bbox_split_v(bbox, 2)
+        for idx, bbox in enumerate(bboxes):
+            for depth in ['0-5', '5-15', '15-30']:
+                bddata.append(get_bulk_density(bbox, depth, f'{country_code}_{idx}'))
+    else:
         for depth in ['0-5', '5-15', '15-30']:
-            bddata.append(get_bulk_density(bbox, depth, f'{country_code}_{idx}'))
+            bddata.append(get_bulk_density(bbox, depth, f'{country_code}'))
 
 def ponderate_soilgrids_rasters(country_name):
     country_code = country_map[country_name]
@@ -63,7 +70,7 @@ def join_with_wosis_data(country_name, gdf_bd_pond):
     df = profiles[profiles['country_name'] == 'Uruguay'].copy()
     df.drop('Unnamed: 0', axis=1, inplace=True)
     df = df.merge(gdf_bd_pond[['profile_id', 'latitude', 'longitude', 'bd_0_30_ponderated']], on='profile_id')
-    df['bd_0_30_soilgrids'] = df['bd_0_30_ponderated'].apply(lambda x: x[0])
+    df['bd_0_30_soilgrids'] = df['bd_0_30_ponderated'].apply(lambda x: round(x[0], 2))
     df.drop('bd_0_30_ponderated', axis=1, inplace=True)
     return df
 
@@ -100,7 +107,8 @@ def plot_raster_with_profiles(country_name):
         plt.savefig('{country_name}_raster_with_profiles_{fig_idx}.png')
         fig_idx += 1
 
-def transform_crs(crs_from, crs_to, bbox):
+def transform_crs(subunits, crs_from, crs_to):
+    bbox = list([c.bbox for c in subunits][0]) # returns tuple inside list
     t = Transformer.from_crs(crs_from=crs_from, crs_to=crs_to, always_xy=True)
     bbox[0], bbox[1] = t.transform(bbox[0], bbox[1])
     bbox[2], bbox[3] = t.transform(bbox[2], bbox[3])
@@ -118,7 +126,7 @@ def get_bulk_density(bbox, depth, file_id):
                                             crs='urn:ogc:def:crs:EPSG::3857', local_file=False,
                                             output=filename)
     else: 
-        print(f'{filename} already exists')
+        logger.info(f'{filename} already exists')
     return rasterio.open(filename)    
 
 # split the bounding box to a matrix of boxes.

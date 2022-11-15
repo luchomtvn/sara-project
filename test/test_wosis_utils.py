@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-class TestCommon(unittest.TestCase):
+class TestWosisSource(unittest.TestCase):
     def test_wosis_ogr2ogr(self):
         file = settings.data_dir + "wosis_latest/wosis_latest_clay_Argentina.csv"
         logger.info(file)
@@ -54,7 +54,7 @@ class TestCommon(unittest.TestCase):
         # TODO: should generate files. 
         df = get_armonized_dataset('Uruguay')
         self.assertTrue(df.info)
-        self.assertEqual(df.loc[0,'clay_pond_val'], 26.06)
+        self.assertEqual(df.loc[0,'clay_pond_val'], 115.35)
 
 if __name__ == '__main__':
     unittest.main()
