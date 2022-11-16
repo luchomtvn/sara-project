@@ -1,11 +1,9 @@
-import pytest
 import unittest
 import pandas as pd
 import numpy as np
 from pyscripts.wosis_utils import wosis_ogr2ogr, scan_input_directory, get_armonized_dataset, poderate_avg, get_profile_summary
 from pyscripts import settings
 from pathlib import Path
-import warnings
 import logging
 
 logger = logging.getLogger(__name__)

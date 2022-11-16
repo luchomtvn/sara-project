@@ -9,7 +9,8 @@ import pyscripts.settings as settings
 path_map = {
     'LAC-SOTER': "LAC-SOTER/SOTERLAC/GIS/SOTER/SOTERLACv2.shp",
     'sa_eco_l3': "sa_eco_l3/sa_eco_l3.shp",
-    'remapasdesuelo': "remapasdesuelo/paisesCopy_ll-wgs84.shp"
+    'zonas_suelo_uy': "zonas_suelo_uy/geomorfologico_utm.shp",
+    'country_borders': "country_borders/paisesCopy_ll-wgs84.shp"
 }
 
 
@@ -35,10 +36,18 @@ def load_shape_file_into_gdf(shape_dir_path, transform_crs=True, flat_crs="EPSG:
 def csv_to_shp(df, long_col, lat_col, transform_crs=True, flat_crs="EPSG:3857"):
     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(
         df.loc[:, long_col], df.loc[:, lat_col])).set_crs("EPSG:4326")
+    gdf.drop('Unnamed: 0', axis=1, inplace=True)
     if transform_crs:
         return gdf.to_crs(flat_crs)
     return gdf
 
+def add_zone_names_to_ecoregions(df_eco):
+    with open(settings.data_dir + 'ecozone_names.txt', 'r') as ecozones:
+        zones = ecozones.readlines()
+    zone_names = list(map(extract_zone_names, zones))
+    levels = list(map(extract_levels, zones))
+    df_level_zone = pd.DataFrame(list(zip(levels, zone_names)), columns=['level', 'zone_name'])
+    return df_eco.merge(df_level_zone, left_on='LEVEL3', right_on='level')
 
 def get_region_and_profile_to_merge(country_name, shape_dir_path):
     summary_path = os.path.join(
@@ -46,7 +55,7 @@ def get_region_and_profile_to_merge(country_name, shape_dir_path):
     return load_shape_file_into_gdf(shape_dir_path), csv_to_shp(pd.read_csv(summary_path), 'longitude', 'latitude')
 
 
-def plot_profile_with_regions(country_name, shape_dir_path, column_plot, plot_title):
+def plot_profile_with_regions(country_name, shape_dir_path, column_plot, plot_title, to_file=False):
     shapes_df, profiles_gdf = get_region_and_profile_to_merge(
         country_name, shape_dir_path)
 
@@ -60,8 +69,23 @@ def plot_profile_with_regions(country_name, shape_dir_path, column_plot, plot_ti
     profiles_gdf.plot(ax=base, marker='o', color='blue', markersize=5)
 
     # country border plot
-    country_borders_gdf = load_shape_file_into_gdf('remapasdesuelo')
+    country_borders_gdf = load_shape_file_into_gdf('country_borders')
     country_borders_gdf.boundary.clip(
         mask=(bbox[0], bbox[1], bbox[2], bbox[3])).plot(ax=base, color='black')
     base.set_title(plot_title)
-    plt.savefig(os.path.join(settings.output_dir, plot_title + '.png'))
+    if to_file:
+        plt.savefig(os.path.join(settings.output_dir, plot_title + '.png'))
+    else:
+        plt.show()
+
+def extract_levels(line):
+    levels = line.split(' ')[0]
+    if levels[-1] == '.':
+        return levels[:-1]
+    else:
+        return levels
+
+def extract_zone_names(line):
+    zone_name = line.split('.')[-1]
+    zone_name = zone_name.split(" ", 1)[1]
+    return zone_name.strip()
