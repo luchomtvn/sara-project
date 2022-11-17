@@ -133,6 +133,10 @@ def transform_crs(subunits, crs_from, crs_to):
 
 
 def get_bulk_density(bbox, depth, file_id):
+    # create soilgrids directory if it doesnt exist
+    if not exists(settings.data_dir + 'soilgrids'):
+        os.mkdir(settings.data_dir + 'soilgrids')
+
     # get data from SoilGrids
     soil_grids = SoilGrids()
     filename = f'{settings.data_dir}soilgrids/{file_id}_{depth.replace("-","_")}_mean.tif'

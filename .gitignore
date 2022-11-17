@@ -10,7 +10,6 @@ resources/
 .DS_Store
 .DS_Store
 .DS_Store
-__*
 sa_eco_13/
 LAC-SOTER
 *.tif
@@ -19,3 +18,4 @@ soil_profiles/
 output/*
 .vscode*
 input_data* 
+__pycache*

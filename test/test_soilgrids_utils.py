@@ -21,8 +21,9 @@ class TestSoilgridsSource(unittest.TestCase):
         subunits = country_subunits_by_iso_code('UY')
         bbox = transform_crs(subunits, "epsg:4326", settings.flat_crs)
         file = settings.soilgrids_dir + 'UY_0_5_mean.tif'
+        data = get_bulk_density(bbox, '0-5', 'UY')
         self.assertEqual(rasterio.open(file).name,
-                         get_bulk_density(bbox, '0-5', 'UY').name)
+                         data.name)
 
     def test_get_raster_files(self):
         get_raster_files('Uruguay')
