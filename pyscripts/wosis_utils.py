@@ -20,7 +20,7 @@ logger.setLevel(logging.INFO)
 
 def fetch_wosis_latest_profiles(country_name):
     for prop in settings.properties:
-        wosis_ogr2ogr(country_name, 'SHP', prop)
+        wosis_ogr2ogr(country_name, 'CSV', prop)
     return get_armonized_dataset(country_name)
 
 
