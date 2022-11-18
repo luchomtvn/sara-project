@@ -1,7 +1,7 @@
 # this is a script that consumes from pyscripts files and is tested in test subdir. 
 # it is expected to be executed by a command line and to be passed arguments.
 
-from pyscripts.pipelines import wosis_report_for_country, soilgrids_complement_bdod
+from pyscripts.pipelines import wosis_report_for_country, soilgrids_complement_bdod, create_summary_with_regions
 import pyscripts.settings as settings
 import argparse
 import logging
@@ -21,3 +21,4 @@ if country_name not in settings.countries:
 
 wosis_report_for_country(country_name)
 soilgrids_complement_bdod(country_name)
+create_summary_with_regions(country_name)

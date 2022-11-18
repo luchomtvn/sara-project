@@ -5,6 +5,7 @@ import os
 
 from pyscripts.wosis_utils import fetch_wosis_latest_profiles
 from pyscripts.soilgrids_utils import complement_bdod
+from pyscripts.shp_utils import merge_soil_with_regions_and_create_summary
 from pyscripts import settings
 
 logger = logging.getLogger(__name__)
@@ -22,3 +23,6 @@ def soilgrids_complement_bdod(country_name):
     df = complement_bdod(country_name, download_rasters=False, plot=False)
     df.to_csv(
         f'{settings.output_dir}{country_name}_profile_summary_with_bdod.csv')
+
+def create_summary_with_regions(country_name):
+    merge_soil_with_regions_and_create_summary(country_name)

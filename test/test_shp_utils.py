@@ -8,7 +8,8 @@ from pyscripts import settings
 from pyscripts.shp_utils import (
     load_shape_file_into_gdf, csv_to_shp,
     get_region_and_profile_to_merge, get_bbox_and_transform,
-    plot_profile_with_regions, add_zone_names_to_ecoregions
+    plot_profile_with_regions, add_zone_names_to_ecoregions,
+    merge_soil_with_regions_and_create_summary
 )
 from country_bounding_boxes import country_subunits_by_iso_code
 
@@ -52,6 +53,11 @@ class TestLoadingSHPFiles(unittest.TestCase):
         gdf = load_shape_file_into_gdf('sa_eco_l3')
         gdf_eco = add_zone_names_to_ecoregions(gdf)
         self.assertIn('zone_name', gdf_eco.columns)
+    
+    def test_merge_soil_with_regions_and_create_summary(self):
+        merge_soil_with_regions_and_create_summary('Uruguay')
+        self.assertTrue(Path(os.path.join(settings.output_dir,
+                        "profile_zones_Uruguay.xlsx")).is_file())
 
 
 if __name__ == '__main__':

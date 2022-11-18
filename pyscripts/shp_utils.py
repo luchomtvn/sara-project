@@ -6,10 +6,15 @@ from country_bounding_boxes import country_subunits_by_iso_code
 from pyscripts.soilgrids_utils import transform_crs, country_map
 import pyscripts.settings as settings
 
+soil_data_map = {
+    'Uruguay': 'zonas_suelo_uy'
+}
+
 path_map = {
     'LAC-SOTER': "LAC-SOTER/SOTERLAC/GIS/SOTER/SOTERLACv2.shp",
     'sa_eco_l3': "sa_eco_l3/sa_eco_l3.shp",
     'zonas_suelo_uy': "zonas_suelo_uy/geomorfologico_utm.shp",
+    'zonas_suelo_ar': "zonas_suelo_ar/suelos_500000_v9.shp",
     'country_borders': "country_borders/paisesCopy_ll-wgs84.shp"
 }
 
@@ -77,6 +82,22 @@ def plot_profile_with_regions(country_name, shape_dir_path, column_plot, plot_ti
         plt.savefig(os.path.join(settings.output_dir, plot_title + '.png'))
     else:
         plt.show()
+
+def merge_soil_with_regions_and_create_summary(country_name):
+    bbox = get_bbox_and_transform(country_map[country_name])
+    gdf_eco_no_names = load_shape_file_into_gdf('sa_eco_l3')
+    gdf_eco = add_zone_names_to_ecoregions(gdf_eco_no_names)
+    gdf_suelos, profiles_gdf = get_region_and_profile_to_merge(country_name, soil_data_map[country_name])
+    gdf_zones = gdf_suelos.overlay(gdf_eco.clip(mask=(bbox[0], bbox[1], bbox[2], bbox[3])))
+    profile_zones = gdf_zones.sjoin(profiles_gdf, predicate='contains')
+
+    group_profile_zones = profile_zones[['GEOFORMA', 'zone_name', 'profile_id', 'clay_pond_val', 'orgc_pond_val', 'bdfi33_pond_val', 'bd_0_30_soilgrids']] \
+                    .groupby(['GEOFORMA', 'zone_name']).agg({'profile_id':'count',
+                                            'clay_pond_val':['mean', 'std'],
+                                            'orgc_pond_val':['mean', 'std'],
+                                            'bdfi33_pond_val':['mean', 'std'],
+                                            'bd_0_30_soilgrids':['mean', 'std']})
+    group_profile_zones.to_excel(os.path.join(settings.output_dir, f'profile_zones_{country_name}.xlsx'))
 
 def extract_levels(line):
     levels = line.split(' ')[0]

@@ -20,3 +20,4 @@ input_data/wosis_latest/*.shp
 input_data/wosis_latest/*.shx
 input_data/wosis_latest/*.gpkg
 input_data/zonas_suelo_uy
+input_data/zonas_suelo_ar
